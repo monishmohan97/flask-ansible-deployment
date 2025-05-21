@@ -4,18 +4,9 @@
   hosts: app_servers
   become: yes
   
-  vars:
-    github_repo: 'https://github.com/vinod-kayartaya/flask-products-api'  
-    # Replace with your repo URL
-    app_dir: /opt/flask_app
-    venv_dir: "{{ app_dir }}/venv"
-    env_vars:
-      DB_HOST: '192.168.0.21'            
-      DB_NAME: 'flask_app_db'
-      DB_USER: 'flask_user'
-      DB_PASSWORD: 'password'  
-    gunicorn_service_name: flask_gunicorn
-
+  vars_files:
+    - vars/group_vars/app_server.yml
+  
   tasks:
     - name: Ensure Python 3 is latest installed
       apt:

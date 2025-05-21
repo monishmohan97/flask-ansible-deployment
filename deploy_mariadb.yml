@@ -4,12 +4,9 @@
   hosts: db_servers
   become: yes
 
-  vars:
-    mariadb_root_password: 'password'             
-    app_db_name: 'flask_app_db'                             
-    app_db_user: 'flask_user'                                
-    app_db_password: 'password'                     #
-
+  vars_files:
+    - vars/group_vars/db_server.yml
+    
   tasks:
     - name: Install MariaDB server
       apt:

@@ -1,0 +1,5 @@
+# Variables specific to database servers
+mariadb_root_password: 'password'             
+app_db_name: 'flask_app_db'                             
+app_db_user: 'flask_user'                                
+app_db_password: 'password'                     #
