@@ -1,0 +1,5 @@
+[app_severs]
+webserver1 ansible_host=192.168.0.22
+
+[db_servers]
+dbserver ansible_host=192.168.0.21
